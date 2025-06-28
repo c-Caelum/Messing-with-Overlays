@@ -73,7 +73,7 @@ end
 local function render()
   while true do
     local meta = modules.getMetaOwner and modules.getMetaOwner()
-    local angle meta and math.rad(-meta.yaw % 360) or math.rad(180)
+    local angle = meta and math.rad(-meta.yaw % 360) or math.rad(180)
     for x = -scannerRange, scannerRange do
 			for z = -scannerRange, scannerRange do
 				local text = block_text[x][z]
