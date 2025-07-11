@@ -7,7 +7,7 @@ local file = io.open("patterns.json", "r")
 
 io.input(file)
 
-local patterns = textutils.unserialiseJSON(io.read(file))
+local patterns = textutils.unserialiseJSON(io.read())
 
 io.close(file)
 
@@ -15,7 +15,7 @@ shell.run("wget", text, "patternlist.txt")
 
 local file1 = io.open("patternlist.txt")
 
-io.input(file)
+io.input(file1)
 
 local patternListContents = textutils.unserialise(io.read(file1, "*all"))
 
