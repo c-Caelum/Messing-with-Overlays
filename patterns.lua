@@ -17,6 +17,6 @@ local file1 = io.open("patternlist.txt")
 
 io.input(file1)
 
-local patternListContents = textutils.unserialise(io.read(file1, "*all"))
+local patternListContents = textutils.unserialise(io.read("*all"))
 
 print(patternListContents)
