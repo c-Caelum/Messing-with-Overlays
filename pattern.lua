@@ -25,6 +25,12 @@ local patternListContents = http.get(text).readAll()
 
 local split = stringSplit(patternListContents, "\n")
 
-print(split)
+for i, v in pairs(split) do
+    local pattern = patterns[v]
+    if pattern then
+        print(v)
+        print(pattern)
+    end
+end
 
 
