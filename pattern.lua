@@ -3,6 +3,16 @@ print("PASTE the URL your pattern list (formatted like .hexpattern) is located a
 
 local event, text = os.pullEvent("paste")
 
+function stringSplit(inputstr, sep)
+    inputstr = sep .. inputstr:gsub(sep, string.char(2) .. sep)
+    local t = {}
+    for str in string.gmatch(inputstr, "([^"..string.char(2).."]+)") do
+      table.insert(t, string.sub(str,2))
+    end
+    return t
+end
+
+
 local file = io.open("patterns.json", "r")
 
 io.input(file)
@@ -13,4 +23,8 @@ io.close(file)
 
 local patternListContents = http.get(text).readAll()
 
-print(patternListContents)
+local split = stringSplit(patternListContents, "\n")
+
+print(split)
+
+
