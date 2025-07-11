@@ -30,7 +30,7 @@ local patternlist = {}
 for i, v in pairs(split) do
     local pattern = patterns[v]
     if pattern then
-        local pattern1 = {}
+        local pattern1 = {["startDir"] = nil, ["angles"] = nil}
         pattern1["startDir"] = pattern[0]
         pattern1["angles"] = pattern[1]
         table.insert(patternList, pattern1)
