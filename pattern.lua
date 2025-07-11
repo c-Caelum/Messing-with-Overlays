@@ -41,10 +41,13 @@ local done =peripheral.find("focal_port").writeIota(placeholder)
 
 if done then
     print("Done. \n Thanks for using this!")
-else
-    "The write did not work. Do you have a focus in the port?"
 end
-
+if not done then
+    print("Write failed. Do you have a focus in your port? (respond 'yes' if yes.)")
+    if read() == "yes" or read == "Yes" then
+        print("Alright. Try bringing it up with me or putting it in issues.")
+    end
+end
 
 
 
