@@ -13,10 +13,10 @@ io.close(file)
 
 shell.run("wget", text, "patternlist.txt")
 
-file = io.open("patternlist.txt")
+local file1 = io.open("patternlist.txt")
 
 io.input(file)
 
-local patternListContents = textutils.unserialise(io.read(file, "*all"))
+local patternListContents = textutils.unserialise(io.read(file1, "*all"))
 
 print(patternListContents)
