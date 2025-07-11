@@ -25,12 +25,20 @@ local patternListContents = http.get(text).readAll()
 
 local split = stringSplit(patternListContents, "\n")
 
+local patternlist = {}
+
 for i, v in pairs(split) do
     local pattern = patterns[v]
     if pattern then
-        print(v)
-        print(pattern)
+        local pattern1 = {}
+        pattern1["startDir"] = pattern[0]
+        pattern1["angles"] = pattern[1]
+        table.insert(patternList, pattern1)
     end
 end
+
+peripheral.find("focal_port").writeIota(patternList)
+
+
 
 
