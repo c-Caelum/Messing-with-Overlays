@@ -12,7 +12,7 @@ local patterns = textutils.unserialiseJSON(io.read())
 
 io.close(file)
 
-local patternListContents = http.get(text)
+local patternListContents = http.get(text).readAll()
 
 
 
