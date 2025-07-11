@@ -37,13 +37,8 @@ for i, v in pairs(split) do
     end
 end
 
-local done = peripheral.find("focal_port").writeIota(placeholder)
+peripheral.find("focal_port").writeIota(placeholder)
 
-if done then
-    print("done!!!")
-else
-    print("Something's gone wrong. Check to make sure there's a focus in your focal port.")
-end
 
 
 
