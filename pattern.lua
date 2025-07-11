@@ -11,12 +11,6 @@ local patterns = textutils.unserialiseJSON(io.read())
 
 io.close(file)
 
-shell.run("wget", text, "patternlist.txt")
-
-local file1 = io.open("patternlist.txt")
-
-io.input(file1)
-
-local patternListContents = textutils.unserialise(io.read("*all"))
+local patternListContents = http.get(text).readAll()
 
 print(patternListContents)
