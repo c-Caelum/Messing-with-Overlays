@@ -14,11 +14,19 @@ io.close(file)
 
 local patternListContents = http.get(text).readAll()
 
+function splitLines(s)
+  local lines = {}
+  for line in s:gmatch("([^\n]*)\n?") do
+    table.insert(lines, line)
+  end
+  return lines
+end
+
 
 
 local placeholder = {}
 
-for i, v in patternListContents:lines() do
+for i, v in splitLines(patternListContents) do
     local pattern = patterns[v]
     if pattern then
         local pattern1 = {}
