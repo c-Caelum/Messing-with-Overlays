@@ -26,7 +26,10 @@ end
 
 local placeholder = {}
 
-for i, v in splitLines(patternListContents) do
+local lines = splitLines(patternListContents)
+print(textutils.serialise(lines))
+
+for i, v in lines do
     local pattern = patterns[v]
     if pattern then
         local pattern1 = {}
