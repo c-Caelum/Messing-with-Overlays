@@ -33,7 +33,9 @@ for i, v in pairs(split) do
         local pattern1 = {["startDir"] = nil, ["angles"] = nil}
         pattern1["startDir"] = pattern[0]
         pattern1["angles"] = pattern[1]
-        table.insert(patternList, pattern1)
+        print(textutils.serialise(patternList))
+        print(textutils.serialise(pattern1))
+        print(textutils.serialise(pattern))
     end
 end
 
