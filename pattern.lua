@@ -30,8 +30,7 @@ local placeholder = {}
 for i, v in pairs(split) do
     local pattern = patterns[v]
     if pattern then
-        table.insert(placeholder, pattern[0] .. pattern[1])
-        
+        table.insert(pattern[1].." "..pattern[2])
     end
 end
 
